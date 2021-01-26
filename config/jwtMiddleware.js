@@ -1,4 +1,4 @@
-module.exports = req, res, next) => {
+module.exports = (req, res, next) => {
     // 클라이언트 쿠키에서 token을 가져옵니다.
     let token = req.cookies.x_auth;
   
