@@ -16,11 +16,11 @@ function login(req, res)
                 errors.email = "해당하는 회원이 존재하지 않습니다.";
                 return res.status(400).json(errors);
             }
-            bcryptchecker(password, user.password);
+            bcryptchecker(password, user, res);
         });
 }
 
-function bcryptchecker(password, user.password)
+function bcryptchecker(password, user, res)
 {
     bcrypt.compare(password, user.password)
         .then(isMatch => {
