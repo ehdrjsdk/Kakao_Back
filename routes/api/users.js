@@ -93,7 +93,7 @@ router.post('/login', (req, res) => {
 });
 
 
-router.post("/auth", jwtMiddleware.jwtMiddleware(), async (req, res) => {
+router.post("/auth", jwtMiddleware.jwtMiddleware, async (req, res) => {
     res.send(req.cookies.x_auth);
     res.status(200).json({
       isAuth: true,
@@ -102,7 +102,7 @@ router.post("/auth", jwtMiddleware.jwtMiddleware(), async (req, res) => {
     });
 });
 
-router.post("/logout", jwtMiddleware.jwtMiddleware(), (req, res) => {
+router.post("/logout", jwtMiddleware.jwtMiddleware, (req, res) => {
 
     return res.cookie("x_auth", "").json({ logoutSuccess: true });
 });
