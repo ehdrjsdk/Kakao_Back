@@ -27,7 +27,7 @@ function login(req, res)
                             id: user.id,
                             name: user.name
                         };
-                        tokenmaker(payload,user);
+                        return tokenmaker(payload,user,res);
 
 
                         
@@ -39,7 +39,7 @@ function login(req, res)
         })
 }
 
-function tokenmaker(payload,user)
+function tokenmaker(payload,user,res)
 {
     const token = jwt.sign(payload, keys.secretOrKey, { expiresIn: '7d' });
 
