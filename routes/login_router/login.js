@@ -16,24 +16,27 @@ function login(req, res)
                 errors.email = "해당하는 회원이 존재하지 않습니다.";
                 return res.status(400).json(errors);
             }
+            bcryptchecker(password, user.password);
+        });
+}
 
-            // 패스워드 확인
-            bcrypt.compare(password, user.password)
-                .then(isMatch => {
-                    if(isMatch) {
-                        // 회원 비밀번호가 일치할 때
-                        // JWT PAYLOAD 생성
-                        const payload = {
-                            id: user.id,
-                            name: user.name
-                        };
-                        tokenmaker(payload,user,res);
-                    } else {
-                        errors.password = "패스워드가 일치하지 않습니다.";
-                        return res.status(400).json(errors);
-                    }
-                });
-        })
+function bcryptchecker(password, user.password)
+{
+    bcrypt.compare(password, user.password)
+        .then(isMatch => {
+            if(isMatch) {
+                // 회원 비밀번호가 일치할 때
+                // JWT PAYLOAD 생성
+                const payload = {
+                    id: user.id,
+                    name: user.name
+                };
+                tokenmaker(payload,user,res);
+            } else {
+                errors.password = "패스워드가 일치하지 않습니다.";
+                return res.status(400).json(errors);
+            }
+        });
 }
 
 function tokenmaker(payload,user,res)
@@ -56,6 +59,5 @@ function tokenmaker(payload,user,res)
             .json({ loginSuccess: true, userId: user.id, token: user.token});
     });
 }
-
 
 module.exports.login = login;
