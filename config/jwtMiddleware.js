@@ -1,5 +1,4 @@
-module.exports = (req, res, next) => {
-    // 클라이언트 쿠키에서 token을 가져옵니다.
+jwtMiddleware = (req, res, next) => {
     let token = req.cookies.x_auth;
   
     // token을 decode 합니다.
@@ -29,3 +28,5 @@ module.exports = (req, res, next) => {
       });
     });
   };
+
+  module.exports.jwtMiddleware = this.jwtMiddleware;
