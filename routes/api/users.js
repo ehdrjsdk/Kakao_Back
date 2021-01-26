@@ -9,12 +9,10 @@ const logout = require('../login_router/logout');
 
 var router = express.Router();
 
-const logininput = login.login;
-
 router.get('/', login_test.test);
 
 router.post('/register', register.register);
-router.post('/login', logininput.login);
+router.post('/login', login.login);
 router.post("/auth", jwtMiddleware.jwtMiddleware, auth.auth);
 router.post("/logout", jwtMiddleware.jwtMiddleware, logout.logout);
 
