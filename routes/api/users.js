@@ -13,7 +13,7 @@ router.get('/', login_test.test);
 
 router.post('/register', register.register);
 router.post('/login', login.login);
-router.post("/auth", jwtMiddleware.jwtMiddleware, async(auth.auth));
+router.post("/auth", jwtMiddleware.jwtMiddleware, auth.auth);
 router.post("/logout", jwtMiddleware.jwtMiddleware, logout.logout);
 /*
 router.get('/current', passport.authenticate('jwt', { session: false}), (req, res) => {
