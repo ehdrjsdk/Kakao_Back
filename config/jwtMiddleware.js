@@ -1,4 +1,4 @@
-jwtMiddleware = (req, res, next) => {
+const jwtMiddleware = (req, res, next) => {
     let token = req.cookies.x_auth;
   
     // token을 decode 합니다.
@@ -29,4 +29,4 @@ jwtMiddleware = (req, res, next) => {
     });
   };
 
-  module.exports.jwtMiddleware = this.jwtMiddleware;
+  module.exports.jwtMiddleware = jwtMiddleware;
