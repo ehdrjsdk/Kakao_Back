@@ -15,6 +15,7 @@ router.post('/register', register.register);
 router.post('/login', login.login);
 router.post("/auth", jwtMiddleware.jwtMiddleware, auth.auth);
 router.post("/logout", jwtMiddleware.jwtMiddleware, logout.logout);
+
 /*
 router.get('/current', passport.authenticate('jwt', { session: false}), (req, res) => {
     res.json({
