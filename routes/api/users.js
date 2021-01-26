@@ -94,7 +94,7 @@ router.post('/login', (req, res) => {
 
 
 router.post("/auth", jwtMiddleware.jwtMiddleware, async (req, res) => {
-    res.send(req.cookies.x_auth);
+//    res.send(req.cookies.x_auth);
     res.status(200).json({
       isAuth: true,
       id: req.user.id,
