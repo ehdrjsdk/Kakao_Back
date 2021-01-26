@@ -6,11 +6,12 @@ const passport = require('passport');
 const User = require('../../models/User');
 const keys = require('../../config/keys');
 const jwtMiddleware = require('../../config/jwtMiddleware');
+
+const login_test = require('../login_router/passport_test');
+
 var router = express.Router();
 
-router.get('/', (req, res) => {
-    res.send("패스포트 모듈 테스트");
-});
+router.get('/', login_test.test(req, res));
 
 router.post('/register', (req, res) => {
     User.findOne({ email: req.body.email })
