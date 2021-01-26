@@ -11,7 +11,7 @@ const login_test = require('../login_router/passport_test');
 
 var router = express.Router();
 
-router.get('/', login_test.test(req, res));
+router.get('/', login_test.test);
 
 router.post('/register', (req, res) => {
     User.findOne({ email: req.body.email })
