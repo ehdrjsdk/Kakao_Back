@@ -27,10 +27,7 @@ function login(req, res)
                             id: user.id,
                             name: user.name
                         };
-                        return tokenmaker(payload,user,res);
-
-
-                        
+                        tokenmaker(payload,user,res);
                     } else {
                         errors.password = "패스워드가 일치하지 않습니다.";
                         return res.status(400).json(errors);
