@@ -6,6 +6,8 @@ const keys = require('../../config/keys');
 
 function login(req, res)
 {
+    // @author <이름>
+    
     const email = req.body.email;
     const password = req.body.password;
 

@@ -1,15 +1,18 @@
+/*
+@author jae kyeong <kang7145471@naver.com>
+@version 0.0.1
+@file 카카오톡 클론코딩 메인 파일입니다.
+*/
 var express = require('express');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var passport = require('passport');
 var cors = require('cors');
 
-// 초기화 파트
 const app = express();
 const users = require('./routes/api/users');
 const cookieParser = require('cookie-parser');
 
-// 미들웨어 설정 파트
 app.use(cors());
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -18,7 +21,6 @@ app.use(cookieParser());
 
 app.use(passport.initialize());
 
-// 몽고DB 설정 파트
 const db = require('./config/keys').mongoURI;
 
 mongoose
@@ -26,10 +28,7 @@ mongoose
     .then(() => console.log("몽고 DB가 연결되었습니다."))
     .catch(err => console.log(err));
 
-// 패스포트 모듈 설정
 require('./config/passport')(passport);
-
-// 라우팅 파트
 
 app.use('/api/users', users);
 
