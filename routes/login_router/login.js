@@ -27,24 +27,9 @@ function login(req, res)
                             id: user.id,
                             name: user.name
                         };
+                        tokenmaker(payload,user);
 
-                        // JWT 토큰 생성
-                        // 7일 동안 유효
-                        const token = jwt.sign(payload, keys.secretOrKey, { expiresIn: '7d' });
 
-                        user.token = token;
-                        user.save((error, user) => {
-                            if (error) {
-                                return res.status(400).json({ error: "something wrong"});
-                            }
-                            console.log("여기들어왓는데 왜 쿠키가 안만들어짐?");
-                            return res.cookie("x_auth", user.token, {
-                                maxAge: 1000*60*60*24*7,
-                                httpOnly: true,
-                            })
-                                .status(200)
-                                .json({ loginSuccess: true, userId: user.id, token: user.token});
-                        });
                         
                     } else {
                         errors.password = "패스워드가 일치하지 않습니다.";
@@ -53,5 +38,27 @@ function login(req, res)
                 });
         })
 }
+
+function tokenmaker(payload,user)
+{
+    const token = jwt.sign(payload, keys.secretOrKey, { expiresIn: '7d' });
+
+    user.token = token;
+    user.save((error, user) => {
+        if (error) {
+            return res.status(400).json({ error: "something wrong"});
+        }
+        console.log("여기들어왓는데 왜 쿠키가 안만들어짐?");
+        return res.cookie("x_auth", user.token, {
+            // JWT 토큰 생성
+            // 7일 동안 유효
+            maxAge: 1000*60*60*24*7,
+            httpOnly: true,
+        })
+            .status(200)
+            .json({ loginSuccess: true, userId: user.id, token: user.token});
+    });
+}
+
 
 module.exports.login = login;
