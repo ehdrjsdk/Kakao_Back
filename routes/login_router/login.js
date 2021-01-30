@@ -32,9 +32,11 @@ function login(req, res)
     const email = req.body.email;
     const password = req.body.password;
 
+    console.log(email);
     // email로 회원 찾기
     User.findOne({email})
         .then(user => {
+            console.log(user);
             if(!user){
                 errors.email = "해당하는 회원이 존재하지 않습니다.";
                 return res.status(400).json(errors);
