@@ -20,6 +20,7 @@ function newFriend(req, res)
                 name: user.name,
                 email: user.email
             };
+            console.log(User_id);
             saveNewfriend(payload, User_id, res)
         });
     
