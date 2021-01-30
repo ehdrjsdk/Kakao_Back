@@ -28,10 +28,11 @@ function newFriend(req, res)
 
 function saveNewfriend(payload, User_id, res)
 {
-    User.findOne({id : User_id})
+    User.findOne({ _id : User_id})
         .then(user => {
             if(!user){
                 errors = "해당하는 회원이 존재하지 않습니다.";
+                return res.status(400).json(errors);
             }
             console.log(user);
             user.friendship.push(payload.id);

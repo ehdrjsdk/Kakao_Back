@@ -42,9 +42,7 @@ const jwtMiddleware = (req, res, next) => {
         }
         if (user) {
           req.token = token;
-          console.log(req.user);
           req.user = user;
-          console.log(req.user);
 
         }
         next();
