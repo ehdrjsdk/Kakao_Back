@@ -10,7 +10,7 @@ function newFriend(req, res)
     User.findOne({Friend_Email})
         .then(user => {
             if(!user){
-                errors.email = "해당하는 회원이 존재하지 않습니다.";
+                errors.friend_email = "해당하는 회원이 존재하지 않습니다.";
                 return res.status(400).json(errors);
             }
             const payload = {
