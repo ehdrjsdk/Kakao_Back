@@ -26,7 +26,11 @@ const UserSchema = new Schema({
     token : {
         type: String,
         required: true
-    }
+    },
+    frendship : [{
+        type: Array,
+        required: true
+    }],
 });
 
 module.exports = User = mongoose.model('users', UserSchema);
