@@ -31,6 +31,7 @@ function saveNewfriend(payload, User_id, res)
             if(!user){
                 errors = "해당하는 회원이 존재하지 않습니다.";
             }
+            console.log(user);
             user.friendship.push(payload.id);
             user.save((error, user) => {
                 if(error) {
