@@ -27,7 +27,7 @@ const UserSchema = new Schema({
         type: String,
         required: true
     },
-    frendship : [{
+    friendship : [{
         type: Array,
         required: true
     }],

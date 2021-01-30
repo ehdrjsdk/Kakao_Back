@@ -73,7 +73,7 @@ function bcryptchecker(password, user, res)
                 };
                 tokenmaker(payload,user,res);
             } else {
-                errors.password = "패스워드가 일치하지 않습니다.";
+                errors = "패스워드가 일치하지 않습니다.";
                 return res.status(400).json(errors);
             }
         });
