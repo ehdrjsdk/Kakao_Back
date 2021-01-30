@@ -1,7 +1,14 @@
+/** @module User */
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-// create schema
+/**
+ * <pre>
+ * email, password, name, token의 type과 존재한다는것을 어디서나 알수있게 해주는
+ * Schema
+ * </pre>
+ * @constant UserSchema
+ */
 
 const UserSchema = new Schema({
     email: {

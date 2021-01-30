@@ -1,19 +1,36 @@
+/** @module jwtMiddleware */
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 const keys = require('./keys');
 
 const jwtMiddleware = (req, res, next) => {
-    let token = req.cookies.x_auth;
+  /**
+   * <pre>
+   * 쿠키에서 넘어오는 암호화된 jwt토큰을 확인하고 해당하는 유저가 있다면
+   * 해당 유저에대한 정보를 돌려주는 역할을 하는 미들웨어로써 코딩을 하였다.
+   * 
+   * @function jwtMiddleware
+   * 
+   * 
+   * @param {*} req
+   * @param {*} res
+   * @param {*} next
+   * 
+   * @returns null
+   * @throws 1. token을 decode 하는 데 실패 했습니다. 2. DB에서 찾는 도중 오류가 발생했습니다. 3. token에 해당하는 유저가 없습니다.
+   * 
+   * </pre>
+   */
+
+   /** @var {Document} token 쿠키에 있는 jwt값을 가지는 변수 */
+    var token = req.cookies.x_auth;
   
-    // token을 decode 합니다.
     jwt.verify(token, keys.secretOrKey, (error, decoded) => {
       if (error) {
         return res
           .status(500)
           .json({ error: "token을 decode하는 데 실패 했습니다." });
       }
-      // decoded에는 jwt를 생성할 때 첫번째 인자로 전달한 객체가 있습니다.
-      // { random: user._id } 형태로 줬으므로 _id를 꺼내 씁시다
       User.findOne({ id: decoded.UserId }, (error, user) => {
         if (error) {
           return res.json({ error: "DB에서 찾는 도중 오류가 발생했습니다" });
@@ -24,7 +41,6 @@ const jwtMiddleware = (req, res, next) => {
             .json({ isAuth: false, error: "token에 해당하는 유저가 없습니다" });
         }
         if (user) {
-          //  다음에 사용할 수 있도록 req 객체에 token과 user를 넣어준다.
           req.token = token;
           req.user = user;
         }
