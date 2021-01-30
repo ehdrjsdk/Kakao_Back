@@ -6,6 +6,7 @@ function newFriend(req, res)
 
     const Friend_Email = req.body.friend_email;
     const User_id = req.user.id;
+    console.log(User_id);
     console.log(Friend_Email);
     User.findOne({email : Friend_Email})
         .then(user => {
