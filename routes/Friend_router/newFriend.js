@@ -26,10 +26,10 @@ function newFriend(req, res)
 
 function saveNewfriend(payload, User_id, res)
 {
-    User.findOne({User_id})
+    User.findOne({id : User_id})
         .then(user => {
             if(!user){
-                errors.id = "해당하는 회원이 존재하지 않습니다.";
+                errors = "해당하는 회원이 존재하지 않습니다.";
             }
             user.friendship.push(payload.id);
             user.save((error, user) => {
