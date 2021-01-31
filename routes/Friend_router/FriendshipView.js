@@ -15,11 +15,12 @@ function FriendshipView(req, res)
                 return res.status(400).json(errors);
             }
             Merge_Friend_Name.push(user.name);
+            
+            return res.status(200).json({name : Merge_Friend_Name});
         });
     }
     
     console.log(Merge_Friend_Name);
-    return res.status(200).json({name : Merge_Friend_Name});
 }
 
 
