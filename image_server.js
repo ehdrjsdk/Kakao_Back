@@ -40,6 +40,6 @@ require('./config/passport')(passport);
 
 app.use('/api/', users);
 
-app.listen(5000, (req, res) => {
+app.listen(4000, (req, res) => {
     console.log("서버 실행중..");
 });
