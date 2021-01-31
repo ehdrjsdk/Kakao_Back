@@ -16,11 +16,7 @@ function FriendshipView(req, res)
             }
             
             Merge_Friend_Name.push(user.name);
-            
-            if(i==Friend_id.length)
-            {
-                return res.status(200).json({name : Merge_Friend_Name}); 
-            }
+            console.log(i,Merge_Friend_Name);
         });
     }
     
