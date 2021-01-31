@@ -61,13 +61,13 @@ function bcryptmaker(newUser, res)
         bcrypt.hash(newUser.password, salt, (err, hash) => {
             if(err) throw err;
             
-            register_save(newUser, res);
+            register_save(newUser, res, hash);
 
         })
     })
 }
 
-function register_save(newUser,res)
+function register_save(newUser,res,hash)
 {
     /**
     * <pre>
