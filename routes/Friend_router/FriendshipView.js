@@ -7,6 +7,7 @@ function FriendshipView(req, res)
 
     console.log(Friend_id.length);
     for(var i=0;i<Friend_id.length;i++) {
+
         User.findOne({ _id : Friend_id[i] })
         .then(user => {
             if(!user){
@@ -16,10 +17,16 @@ function FriendshipView(req, res)
             }
             
             Merge_Friend_Name.push(user.name);
-            console.log(i,Merge_Friend_Name);
+            console.log(i,j,Merge_Friend_Name);
         });
+
     }
-    
+/*
+    if(i==Merge_Friend_Name.length)
+    {
+        return res.status(200).json({name : Merge_Friend_Name}); 
+    }
+*/
     console.log(Merge_Friend_Name);   
 }
 
