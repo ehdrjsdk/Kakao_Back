@@ -18,7 +18,7 @@ router.post('/login', login.login);
 router.post("/auth", jwtMiddleware.jwtMiddleware, auth.auth);
 router.post("/logout", jwtMiddleware.jwtMiddleware, logout.logout);
 router.post("/newFriend", jwtMiddleware.jwtMiddleware, newFriend.newFriend);
-router.post("/FreindshipView",  jwtMiddleware.jwtMiddleware, FriendshipView.FriendshipView);
+router.post("/FriendshipView",  jwtMiddleware.jwtMiddleware, FriendshipView.FriendshipView);
 
 /*
 router.get('/current', passport.authenticate('jwt', { session: false}), (req, res) => {
