@@ -6,8 +6,8 @@ function FriendshipView(req, res)
     const Merge_Friend_Name = [];
 
     console.log(Friend_id.length);
-
-    User.findOne({ _id : Friend_id })
+    for(var i=0;i<Friend_id.length;i++) {
+        User.findOne({ _id : Friend_id[i] })
         .then(user => {
             if(!user){
                 console.log(user);
@@ -16,7 +16,8 @@ function FriendshipView(req, res)
             }
             Merge_Friend_Name.push(user.name);
             console.log(Merge_Friend_Name);
-        })
+        });
+    }
     
     return res.status(200).json({name : Merge_Friend_Name});
 }
