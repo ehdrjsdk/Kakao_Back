@@ -1,9 +1,9 @@
 
-function Friendship(req, res)
+function FriendshipView(req, res)
 {
     res.status(200).json({
         Friendship : res.user.friendship,
     });
 }
 
-module.exports.Friendship = Friendship;
+module.exports.FriendshipView = FriendshipView;
