@@ -3,7 +3,7 @@ const User = require("../../models/User");
 function FriendshipView(req, res)
 {
     const Friend_id = req.user.friendship;
-    var Merge_Friend_Name = new Object();
+    var Merge_Friend_Name = new Array();
 
     console.log(Friend_id.length);
     for(var i=0;i<Friend_id.length;i++) {
