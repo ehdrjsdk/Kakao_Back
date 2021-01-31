@@ -15,17 +15,18 @@ function FriendshipView(req, res)
                 errors = "해당하는 회원이 존재하지 않습니다.";
                 return res.status(400).json(errors);
             }
-            
-            console.log(i,Merge_Friend_Name);
             Merge_Friend_Name.push(user.name);
+            console.log(i,Merge_Friend_Name);
+            
+            if(i==Merge_Friend_Name.length)
+            {
+                return res.status(200).json({name : Merge_Friend_Name}); 
+            }
         });
 
     }
 /*
-    if(i==Merge_Friend_Name.length)
-    {
-        return res.status(200).json({name : Merge_Friend_Name}); 
-    }
+
 */
     console.log(Merge_Friend_Name);   
 }
