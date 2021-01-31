@@ -5,7 +5,7 @@ function FriendshipView(req, res)
     const Friend_id = req.user.friendship;
     const Merge_Friend_Name = [];
 
-    console.log(Friend_id);
+    console.log(Friend_id.length);
 
     User.findOne({ _id : Friend_id })
         .then(user => {
