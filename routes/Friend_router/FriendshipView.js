@@ -2,7 +2,7 @@
 function FriendshipView(req, res)
 {
     res.status(200).json({
-        Friendship : res.user.friendship,
+        friendship : req.user.friendship,
     });
 }
 
