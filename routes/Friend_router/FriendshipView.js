@@ -3,7 +3,7 @@ const User = require("../../models/User");
 function FriendshipView(req, res)
 {
     const Friend_id = req.body.frendship;
-    const Merge_Friend_Name;
+    const Merge_Friend_Name = [];
 
     User.findOne({_id : Friend_id})
         .then(user => {
