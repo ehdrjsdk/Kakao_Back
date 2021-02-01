@@ -25,6 +25,7 @@ function Profile_image(req, res)
 function saveProfileImageName(req, res)
 {
     req.user.profile_image_filename = req.file.filename;
+    req.user.save();
 }
 
 module.exports.Profile_image = Profile_image;
