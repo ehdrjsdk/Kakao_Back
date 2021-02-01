@@ -1,5 +1,6 @@
 var express = require('express');
 const multer = require('multer');
+const path = require('path');
 
 const jwtMiddleware = require('../../config/jwtMiddleware');
 const Profile_image_upload = require('../../config/Profile_image_upload');
@@ -17,7 +18,6 @@ var router = express.Router();
 
 
 const ok = multer({
-    
     storage: multer.diskStorage({
       destination: function (req, file, cb) {
           console.log('2');
