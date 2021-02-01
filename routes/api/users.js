@@ -36,7 +36,7 @@ router.post('/Profile_image_upload', function(req, res, next) {
     Profile_image.upload(req,res).then(function (file) {
         res.json(file);
     }, function (err) {
-        res.send(500, err);
+        res.status(500).send(err);
     });
 });
 
