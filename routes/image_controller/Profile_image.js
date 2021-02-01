@@ -1,7 +1,7 @@
 const multer = require('multer');
 const path = require('path');
 const Q = require('q');
-const imagePath = '../Profile_image';
+const imagePath = '../../Profile_image';
 
 var upload = function (req, res) {
     var deferred = Q.defer();
@@ -14,6 +14,7 @@ var upload = function (req, res) {
           name: req.params.filename,
           ext: file.mimetype.split('/')[1]
         };
+        console.log(file.uploadedFile.name);
         cb(null, file.uploadedFile.name + '.' + file.uploadedFile.ext);
       }
     });
@@ -23,6 +24,7 @@ var upload = function (req, res) {
       if (err) deferred.reject();
       else deferred.resolve(req.file.uploadedFile);
     });
+    console.log(deferred.promise);
     return deferred.promise;
   };
 
