@@ -1,4 +1,5 @@
 const Profile_image_Schema = require('../../models/Profile_image_Scheama');
+const User = require('../../models/User');
 
 function Profile_image(req, res)
 {
@@ -15,7 +16,15 @@ function Profile_image(req, res)
 
     newProfile_image.save();
 
-    console.log(req.file);
+    res.json(req.file);
+
+    saveProfileImageName(req, res);
+
+}
+
+function saveProfileImageName(req, res)
+{
+    req.user.profile_image_filename = req.file.filename;
 }
 
 module.exports.Profile_image = Profile_image;

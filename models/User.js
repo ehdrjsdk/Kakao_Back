@@ -31,7 +31,7 @@ const UserSchema = new Schema({
         type: Array,
         required: true
     }],
-    profile_image_url :  {
+    profile_image_filename :  {
         type : String,
         required: true
     },
