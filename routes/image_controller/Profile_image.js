@@ -3,7 +3,7 @@ const Profile_image_Schema = require('../../models/Profile_image_Scheama');
 function Profile_image(req, res)
 {
     const newProfile_image = new Profile_image_Schema({
-        fileldname: req.file.fileldname,
+        fieldname: req.file.fieldname,
         originalname: req.file.originalname,
         encoding: req.file.encoding,
         mimetype: req.file.mimetype,
