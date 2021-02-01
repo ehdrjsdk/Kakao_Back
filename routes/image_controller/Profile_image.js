@@ -1,6 +1,6 @@
 const multer = require('multer');
 const path = require('path');
-const Q = require('Q');
+const Q = require('q');
 
 
 var upload = function (req, res) {
