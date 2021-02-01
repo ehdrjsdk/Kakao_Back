@@ -14,11 +14,10 @@
 var express = require('express');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
-var passport = require('passport');
 var cors = require('cors');
 
 const app = express();
-const users = require('./routes/api/users');
+const images = require('./routes/api/images');
 const cookieParser = require('cookie-parser');
 
 app.use(cors());
@@ -27,8 +26,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cookieParser());
 
-app.use(passport.initialize());
-
 const db = require('./config/keys').mongoURI;
 
 mongoose
@@ -36,9 +33,7 @@ mongoose
     .then(() => console.log("몽고 DB가 연결되었습니다."))
     .catch(err => console.log(err));
 
-require('./config/passport')(passport);
-
-app.use('/api/', users);
+app.use('/api/images', images);
 
 app.listen(4000, (req, res) => {
     console.log("서버 실행중..");
