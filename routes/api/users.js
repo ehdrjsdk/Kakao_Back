@@ -29,7 +29,7 @@ const ok = multer({
     }),
 });
 
-router.post('/ok', ok.single('file'), (req, res) => {
+router.post('/ok', Profile_image_upload.Profile_image_upload.single('file'), (req, res) => {
     console.log(req.file);
 });
 
