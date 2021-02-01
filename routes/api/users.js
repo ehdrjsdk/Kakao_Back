@@ -20,14 +20,14 @@ const ok = multer({
     storage: multer.diskStorage({
       destination: function (req, file, cb) {
           console.log('2');
-          cb(null, __dirname + '../../Profile_image/');
+          cb(null, __dirname + '../../../Profile_image/');
       },
       filename: function (req, file, cb) {
           console.log('1');
         cb(null, new Date().valueOf() + path.extname(file.originalname));
       }
     }),
-  });
+});
 
 router.post('/ok', ok.single('file'), (req, res) => {
     console.log(req.file);
