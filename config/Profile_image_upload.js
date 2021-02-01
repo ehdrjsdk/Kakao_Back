@@ -4,12 +4,14 @@ const multer = require('multer');
 const path = require('path');
 
 const Profile_image_upload = multer({
+    
   storage: multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, '../Profile_image');
+        console.log('2');
+        cb(null, '../Profile_image');
     },
     filename: function (req, file, cb) {
-        console.log(file.originalname);
+        console.log('1');
       cb(null, new Date().valueOf() + path.extname(file.originalname));
     }
   }),
