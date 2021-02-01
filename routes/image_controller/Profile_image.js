@@ -14,7 +14,6 @@ var upload = function (req, res) {
           name: req.params.filename,
           ext: file.mimetype.split('/')[1]
         };
-        console.log(file.uploadedFile.name);
         cb(null, file.uploadedFile.name + '.' + file.uploadedFile.ext);
       }
     });
@@ -24,7 +23,8 @@ var upload = function (req, res) {
       if (err) deferred.reject();
       else deferred.resolve(req.file.uploadedFile);
     });
-    console.log(deferred.promise);
+    console.log(deferred.promise.valueOf);
+    console.log(deferred.promise.inspect);
     return deferred.promise;
   };
 
