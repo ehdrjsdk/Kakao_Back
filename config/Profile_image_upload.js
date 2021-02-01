@@ -9,6 +9,7 @@ const Profile_image_upload = multer({
       cb(null, '../Profile_image');
     },
     filename: function (req, file, cb) {
+        console.log(file.originalname);
       cb(null, new Date().valueOf() + path.extname(file.originalname));
     }
   }),
