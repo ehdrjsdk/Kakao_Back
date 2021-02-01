@@ -32,7 +32,13 @@ const ok = multer({
 
 router.get('/', login_test.test);
 
-router.post('/Profile_image_upload', ok.single('img'), Profile_image.Profile_image);
+router.post('/Profile_image_upload', function(req, res, next) {
+    Profile_image.upload(req,res).then(function (file) {
+        res.json(file);
+    }, function (err) {
+        res.send(500, err);
+    });
+});
 
 router.post('/register', register.register);
 router.post('/login', login.login);
