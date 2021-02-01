@@ -1,17 +1,15 @@
 const multer = require('multer');
 const path = require('path');
+const Q = require('Q');
 
 
 var upload = function (req, res) {
     var deferred = Q.defer();
     var storage = multer.diskStorage({
-      // 서버에 저장할 폴더 
       destination: function (req, file, cb) {
         cb(null, imagePath);
       },
-  
-      // 서버에 저장할 파일 명
-      filename: function (req, file, cb) {
+        filename: function (req, file, cb) {
         file.uploadedFile = {
           name: req.params.filename,
           ext: file.mimetype.split('/')[1]
