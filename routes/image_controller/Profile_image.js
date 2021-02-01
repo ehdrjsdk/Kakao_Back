@@ -1,7 +1,7 @@
 const multer = require('multer');
 const path = require('path');
 const Q = require('q');
-const imagePath = '../../Profile_image';
+const imagePath = '../../Profile_image/';
 
 var upload = function (req, res) {
     var deferred = Q.defer();
