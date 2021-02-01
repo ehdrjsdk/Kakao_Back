@@ -23,8 +23,9 @@ var upload = function (req, res) {
       if (err) deferred.reject();
       else deferred.resolve(req.file.uploadedFile);
     });
-    console.log(deferred.promise.valueOf);
-    console.log(deferred.promise.inspect);
+    console.log(deferred.promise);
+    console.log(req.file.uploadedFile);
+
     return deferred.promise;
   };
 
