@@ -21,10 +21,13 @@ var upload = function (req, res) {
     var upload = multer({ storage: storage }).single('file');
     upload(req, res, function (err) {
       if (err) deferred.reject();
-      else deferred.resolve(req.file.uploadedFile);
+      else
+      {
+        deferred.resolve(req.file.uploadedFile);  
+        console.log(req.file.uploadedFile);
+      } 
     });
     console.log(deferred.promise);
-    console.log(req.file.uploadedFile);
 
     return deferred.promise;
   };
