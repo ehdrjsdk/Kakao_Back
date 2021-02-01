@@ -41,4 +41,4 @@ const Profile_image_Schema = new Schema({
     },
 });
 
-module.exports = Profile_image_Schema = mongoose.model('Profile_image', Profile_image_Schema);
+module.exports = ProfileimageSchema = mongoose.model('Profile_image', Profile_image_Schema);

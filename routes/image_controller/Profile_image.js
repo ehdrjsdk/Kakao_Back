@@ -14,7 +14,7 @@ function Profile_image(req, res)
     });
 
     newProfile_image.save();
-    
+
     console.log(req.file);
 }
 
