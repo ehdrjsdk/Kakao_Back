@@ -20,7 +20,7 @@ const ok = multer({
     storage: multer.diskStorage({
       destination: function (req, file, cb) {
           console.log('2');
-          cb(null, '../../Profile_image/');
+          cb( __dirname , '../../Profile_image/');
       },
       filename: function (req, file, cb) {
           console.log('1');
