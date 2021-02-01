@@ -16,34 +16,9 @@ const Profile_image = require('../image_controller/Profile_image');
 
 var router = express.Router();
 
-const ok = multer({
-    storage: multer.diskStorage({
-      destination: function (req, file, cb) {
-          console.log('2');
-          cb(null, __dirname + '../../../Profile_image/');
-      },
-      filename: function (req, file, cb) {
-          console.log('1');
-        cb(null, new Date().valueOf() + path.extname(file.originalname));
-      }
-    }),
-});
-
-router.post('/ok', Profile_image_upload.Profile_image_upload.single('file'), (req, res) => {
-    console.log(req.file);
-});
+router.post('/Profile_image_upload', Profile_image_upload.Profile_image_upload.single('file'), Profile_image.Profile_image);
 
 router.get('/', login_test.test);
-
-router.post('/Profile_image_upload', function(req, res, next) {
-    Profile_image.upload(req,res).then(file  => {
-        if(!file)
-        {
-            return res.status(500).json('이미지안들어왓음');
-        }
-        res.json(file);
-    });
-});
 
 router.post('/register', register.register);
 router.post('/login', login.login);
