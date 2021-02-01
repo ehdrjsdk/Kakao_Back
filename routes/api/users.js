@@ -15,7 +15,7 @@ const FriendshipView = require('../Friend_router/FriendshipView');
 const Profile_image = require('../image_controller/Profile_image');
 
 var router = express.Router();
-
+/*
 
 const ok = multer({
     storage: multer.diskStorage({
@@ -29,14 +29,17 @@ const ok = multer({
       }
     }),
   });
+*/
 
 router.get('/', login_test.test);
 
 router.post('/Profile_image_upload', function(req, res, next) {
-    Profile_image.upload(req,res).then(function (file) {
+    Profile_image.upload(req,res).then(file  => {
+        if(!file)
+        {
+            return res.status(500).json('이미지안들어왓음');
+        }
         res.json(file);
-    }, function (err) {
-        res.status(500).send(err);
     });
 });
 
