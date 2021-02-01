@@ -15,13 +15,12 @@ const FriendshipView = require('../Friend_router/FriendshipView');
 const Profile_image = require('../image_controller/Profile_image');
 
 var router = express.Router();
-/*
 
 const ok = multer({
     storage: multer.diskStorage({
       destination: function (req, file, cb) {
           console.log('2');
-          cb(null, '../../Profile_image');
+          cb(null, '../../Profile_image/');
       },
       filename: function (req, file, cb) {
           console.log('1');
@@ -29,7 +28,10 @@ const ok = multer({
       }
     }),
   });
-*/
+
+router.post('/ok', ok.single('file'), (req, res) => {
+    console.log(req.file);
+});
 
 router.get('/', login_test.test);
 
