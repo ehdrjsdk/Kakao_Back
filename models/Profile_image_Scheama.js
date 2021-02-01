@@ -28,7 +28,7 @@ const Profile_image_Schema = new Schema({
         required: true
     },
     filename : {
-        type: Array,
+        type: String,
         required: true
     },
     path :  {
