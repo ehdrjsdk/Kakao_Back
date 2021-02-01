@@ -1,4 +1,5 @@
 var express = require('express');
+const multer = require('multer');
 
 const jwtMiddleware = require('../../config/jwtMiddleware');
 const Profile_image_upload = require('../../config/Profile_image_upload');
@@ -14,9 +15,24 @@ const Profile_image = require('../image_controller/Profile_image');
 
 var router = express.Router();
 
+
+const ok = multer({
+    
+    storage: multer.diskStorage({
+      destination: function (req, file, cb) {
+          console.log('2');
+          cb(null, '../Profile_image');
+      },
+      filename: function (req, file, cb) {
+          console.log('1');
+        cb(null, new Date().valueOf() + path.extname(file.originalname));
+      }
+    }),
+  });
+
 router.get('/', login_test.test);
 
-router.post('/Profile_image_upload', Profile_image_upload.single('img'), Profile_image.Profile_image);
+router.post('/Profile_image_upload', ok.single('img'), Profile_image.Profile_image);
 
 router.post('/register', register.register);
 router.post('/login', login.login);
