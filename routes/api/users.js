@@ -16,9 +16,10 @@ const Profile_image = require('../image_controller/Profile_image');
 
 var router = express.Router();
 
-router.post('/Profile_image_upload', Profile_image_upload.Profile_image_upload.single('file'), Profile_image.Profile_image);
-
 router.get('/', login_test.test);
+
+router.post('/Profile_image_upload', Profile_image_upload.Profile_image_upload.single('file'),jwtMiddleware.jwtMiddleware, Profile_image.Profile_image);
+
 
 router.post('/register', register.register);
 router.post('/login', login.login);
