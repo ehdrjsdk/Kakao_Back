@@ -16,7 +16,7 @@ var router = express.Router();
 
 router.get('/', login_test.test);
 
-router.post('/Profile_image_upload', Profile_image_upload.Profile_image_upload.single('img'), Profile_image.Profile_image);
+router.post('/Profile_image_upload', Profile_image_upload.single('img'), Profile_image.Profile_image);
 
 router.post('/register', register.register);
 router.post('/login', login.login);
