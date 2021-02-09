@@ -16,8 +16,6 @@ function logout(res)
      * @return 쿠키값의 내용을  ""으로 초기화, logoutSuccess: true
      */
     res.clearCookie("x_auth");
-    res.redirect("/");
-
 }
 
 module.exports.logout = logout;

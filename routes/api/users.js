@@ -22,7 +22,7 @@ router.post('/Profile_image_upload', Profile_image_upload.Profile_image_upload.s
 router.post('/register', register.register);
 router.post('/login', login.login);
 router.post("/auth", jwtMiddleware.jwtMiddleware, auth.auth);
-router.get("/logout", jwtMiddleware.jwtMiddleware, logout.logout);
+router.post("/logout", jwtMiddleware.jwtMiddleware, logout.logout);
 router.post("/newFriend", jwtMiddleware.jwtMiddleware, newFriend.newFriend);
 router.post("/FriendshipView",  jwtMiddleware.jwtMiddleware, FriendshipView.FriendshipView);
 
