@@ -34,8 +34,8 @@ const jwtMiddleware = (req, res, next) => {
       }
       console.log(decoded.UserId);
 
-      User.findOne({ id: decoded.UserId }, (error, user) => {
-        
+      User.findOne({ token: token }, (error, user) => {
+
         console.log(decoded.UserId);
 
         if (error) {
