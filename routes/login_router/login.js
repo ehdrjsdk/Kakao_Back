@@ -107,7 +107,7 @@ function tokenmaker(payload,user,res)
     console.log(token);
     user.save((error, user) => {
         if (error) {
-            return res.status(400).json({ error: "something wrong"});
+            return res.status(400).json({ error: error});
         }
         console.log("여기들어왓는데 왜 쿠키가 안만들어짐?");
         return res.cookie("x_auth", user.token, {
