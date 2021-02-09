@@ -32,7 +32,8 @@ function register(req,res)
                 email: req.body.email,
                 name: req.body.name,
                 password: req.body.password,
-                token: 'null'
+                token: 'null',
+                profile_image_filename: 'null'
             });
             bcryptmaker(newUser, res);
         }
