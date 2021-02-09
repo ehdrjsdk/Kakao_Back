@@ -23,7 +23,8 @@ function Profile_image(req, res)
      * 
      */
 
-    console.log(req.file.fieldname);
+    console.log(req.file.originalname);
+
     const newProfile_image = new Profile_image_Schema({
         fieldname: req.file.fieldname,
         originalname: req.file.originalname,
