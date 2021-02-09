@@ -24,7 +24,8 @@ const jwtMiddleware = (req, res, next) => {
 
    /** @var {Document} token 쿠키에 있는 jwt값을 가지는 변수 */
     var token = req.cookies.x_auth;
-  
+    console.log(token);
+      
     jwt.verify(token, keys.secretOrKey, (error, decoded) => {
       if (error) {
         return res
