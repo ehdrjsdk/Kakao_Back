@@ -19,6 +19,8 @@ const Profile_image_upload = multer({
  */
   storage: multer.diskStorage({
     destination: function (req, file, cb) {
+      
+        console.log(__dirname);
         cb(null, __dirname + '/../Profile_image/');
     },
     filename: function (req, file, cb) {
