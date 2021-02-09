@@ -35,9 +35,11 @@ const jwtMiddleware = (req, res, next) => {
       console.log(decoded.UserId);
 
       User.findOne({ id: decoded.UserId }, (error, user) => {
+
         if (error) {
           return res.json({ error: "DB에서 찾는 도중 오류가 발생했습니다" });
         }
+        console.log(user);
         if (!user) {
           return res
             .status(404)
