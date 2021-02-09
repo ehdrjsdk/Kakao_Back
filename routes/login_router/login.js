@@ -103,6 +103,7 @@ function tokenmaker(payload,user,res)
     /** @constant token 7일간 유효한 jwt를 저장하여 사용함 */
     const token = jwt.sign(payload, keys.secretOrKey, { expiresIn: '7d' });
 
+    user.profile_image_filename = null;
     user.token = token;
     console.log(token);
     user.save((error, user) => {
