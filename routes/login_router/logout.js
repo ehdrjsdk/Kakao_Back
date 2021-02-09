@@ -15,7 +15,7 @@ function logout(req, res)
      * 
      * @return 쿠키값의 내용을  ""으로 초기화, logoutSuccess: true
      */
-    return res.clearCookie("x_auth", {path: '/visitors'})
+    return res.clearCookie("x_auth"/*, {path: '/visitors'}*/)
         .status(200)
         .json({ logoutSuccess: true });
 }
