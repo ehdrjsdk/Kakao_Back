@@ -25,13 +25,15 @@ const jwtMiddleware = (req, res, next) => {
    /** @var {Document} token 쿠키에 있는 jwt값을 가지는 변수 */
     var token = req.cookies.x_auth;
     console.log(token);
-      
+
     jwt.verify(token, keys.secretOrKey, (error, decoded) => {
       if (error) {
         return res
           .status(500)
           .json({ error: "token을 decode하는 데 실패 했습니다." });
       }
+      console.log(decoded.UserID);
+      
       User.findOne({ id: decoded.UserId }, (error, user) => {
         if (error) {
           return res.json({ error: "DB에서 찾는 도중 오류가 발생했습니다" });
