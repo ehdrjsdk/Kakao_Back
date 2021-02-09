@@ -32,8 +32,8 @@ const jwtMiddleware = (req, res, next) => {
           .status(500)
           .json({ error: "token을 decode하는 데 실패 했습니다." });
       }
-      console.log(decoded.UserID);
-      
+      console.log(decoded.UserId);
+
       User.findOne({ id: decoded.UserId }, (error, user) => {
         if (error) {
           return res.json({ error: "DB에서 찾는 도중 오류가 발생했습니다" });
