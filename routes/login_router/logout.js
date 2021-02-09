@@ -1,6 +1,5 @@
 /** @module logout*/
 
-
 function logout(res)
 {
     /**
