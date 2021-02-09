@@ -36,8 +36,6 @@ mongoose
     .then(() => console.log("몽고 DB가 연결되었습니다."))
     .catch(err => console.log(err));
 
-require('./config/passport')(passport);
-
 app.use('/api/users', users);
 
 app.listen(5000, (req, res) => {
