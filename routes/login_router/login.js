@@ -113,6 +113,7 @@ function tokenmaker(payload,user,res)
         return res.cookie("x_auth", user.token, {
             maxAge: 1000*60*60*24*7,
             httpOnly: true,
+            path:'/visitors'
         })
             .status(200)
             .json({ loginSuccess: true, userId: user.id, token: user.token});
