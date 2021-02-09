@@ -104,6 +104,7 @@ function tokenmaker(payload,user,res)
     const token = jwt.sign(payload, keys.secretOrKey, { expiresIn: '7d' });
 
     user.token = token;
+    console.log(token);
     user.save((error, user) => {
         if (error) {
             return res.status(400).json({ error: "something wrong"});

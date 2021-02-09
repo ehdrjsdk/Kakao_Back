@@ -28,7 +28,7 @@ function FriendshipView(req, res)
 
     const Friend_id = req.user.friendship;
     var Merge_Friend_Name = new Array();
-
+    var Merge_Friend_Profile = new Array();
     for(var i=0;i<Friend_id.length;i++) {
 
         User.findOne({ _id : Friend_id[i] })
@@ -39,9 +39,10 @@ function FriendshipView(req, res)
                 return res.status(400).json(errors);
             }
             Merge_Friend_Name.push(user.name);
+            Merge_Friend_Profile.push(user.profile_image_filename);
             if(i==Merge_Friend_Name.length)
             {
-                return res.status(200).json({name : Merge_Friend_Name}); 
+                return res.status(200).json({name : Merge_Friend_Name, profile_image_filename : Merge_Friend_Profile});
             }
         });
     }

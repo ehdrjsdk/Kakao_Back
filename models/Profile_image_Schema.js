@@ -4,8 +4,8 @@ const Schema = mongoose.Schema;
 
 /**
  * <pre>
- * email, password, name, token의 type과 존재한다는것을 어디서나 알수있게 해주는
- * Schema
+ * fieldname, originalname, encoding, mimetype, filename, path, size를
+ * 저장할 수 있게 Schema설정을 해주는 구문
  * </pre>
  * @constant Profile_image_Schema
  */

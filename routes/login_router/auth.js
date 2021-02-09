@@ -21,6 +21,7 @@ function auth(req, res)
         isAuth: true,
         id: req.user.id,
         name: req.user.name,
+        profile_image_filename : req.user.profile_image_filename,
     });
 }
 
