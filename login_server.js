@@ -21,7 +21,12 @@ const app = express();
 const users = require('./routes/api/users');
 const cookieParser = require('cookie-parser');
 
-app.use(cors());
+app.use(cors(
+    {
+        origin: true,
+        credentials: true
+    }
+));
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
