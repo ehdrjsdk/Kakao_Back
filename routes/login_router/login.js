@@ -114,7 +114,7 @@ function tokenmaker(payload,user,res)
             Secure: true,
             maxAge: 1000*60*60*24*7,
             httpOnly: true,
-            sameSite: "None",
+            sameSite: "Lax",
 //            path:'/visitors'
         })
             .status(200)
