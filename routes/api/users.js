@@ -20,7 +20,7 @@ router.post('/Profile_image_upload', Profile_image_upload.Profile_image_upload.s
 
 
 router.post('/register', register.register);
-router.get('/login', login.login);
+router.post('/login', login.login);
 router.post("/auth", jwtMiddleware.jwtMiddleware, auth.auth);
 router.post("/logout", jwtMiddleware.jwtMiddleware, logout.logout);
 router.post("/newFriend", jwtMiddleware.jwtMiddleware, newFriend.newFriend);
