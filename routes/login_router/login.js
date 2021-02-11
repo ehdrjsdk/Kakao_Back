@@ -111,10 +111,10 @@ function tokenmaker(payload,user,res)
         }
         console.log("여기들어왓는데 왜 쿠키가 안만들어짐?");
         return res.cookie("x_auth", user.token, {
+            Secure: true,
             maxAge: 1000*60*60*24*7,
             httpOnly: true,
             sameSite: "None",
-            Secure: true,
 //            path:'/visitors'
         })
             .status(200)
