@@ -38,8 +38,7 @@ function FriendshipView(req, res)
                 errors = "해당하는 회원이 존재하지 않습니다.";
                 return res.status(400).json(errors);
             }
-            Merge_Friend_Name.name.push(user.name);
-            Merge_Friend_Name.profile_image_filename.push(user.profile_image_filename);
+            Merge_Friend_Name.push({name : user.name, profile_image_filename : user.profile_image_filename});
             if(i==Merge_Friend_Name.length)
             {
                 return res.status(200).json({Merge_Friend_Name});
