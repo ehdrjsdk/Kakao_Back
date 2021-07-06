@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>FriendshipView - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-auth.html">auth</a><ul class='methods'><li data-type='method'><a href="module-auth.html#~auth">auth</a></li></ul></li><li><a href="module-FriendshipView.html">FriendshipView</a><ul class='methods'><li data-type='method'><a href="module-FriendshipView.html#~FriendshipView">FriendshipView</a></li></ul></li><li><a href="module-jwtMiddleware.html">jwtMiddleware</a><ul class='methods'><li data-type='method'><a href="module-jwtMiddleware.html#~jwtMiddleware">jwtMiddleware</a></li></ul></li><li><a href="module-login.html">login</a><ul class='methods'><li data-type='method'><a href="module-login.html#~bcryptchecker">bcryptchecker</a></li><li data-type='method'><a href="module-login.html#~login">login</a></li><li data-type='method'><a href="module-login.html#~tokenmaker">tokenmaker</a></li></ul></li><li><a href="module-logout.html">logout</a><ul class='methods'><li data-type='method'><a href="module-logout.html#~logout">logout</a></li></ul></li><li><a href="module-newFriend.html">newFriend</a><ul class='methods'><li data-type='method'><a href="module-newFriend.html#~newFriend">newFriend</a></li><li data-type='method'><a href="module-newFriend.html#~saveNewfriend">saveNewfriend</a></li></ul></li><li><a href="module-Profile_image.html">Profile_image</a><ul class='methods'><li data-type='method'><a href="module-Profile_image.html#~Profile_image">Profile_image</a></li><li data-type='method'><a href="module-Profile_image.html#~saveProfileImageName">saveProfileImageName</a></li></ul></li><li><a href="module-Profile_image_opener.html">Profile_image_opener</a><ul class='methods'><li data-type='method'><a href="module-Profile_image_opener.html#~Profile_image_opener">Profile_image_opener</a></li></ul></li><li><a href="module-Profile_image_Schema.html">Profile_image_Schema</a></li><li><a href="module-Profile_image_upload.html">Profile_image_upload</a></li><li><a href="module-register.html">register</a><ul class='methods'><li data-type='method'><a href="module-register.html#~bcryptmaker">bcryptmaker</a></li><li data-type='method'><a href="module-register.html#~register">register</a></li><li data-type='method'><a href="module-register.html#~register_save">register_save</a></li></ul></li><li><a href="module-test.html">test</a><ul class='methods'><li data-type='method'><a href="module-test.html#~test">test</a></li></ul></li><li><a href="module-User.html">User</a></li></ul><h3>Global</h3><ul><li><a href="global.html#app">app</a></li><li><a href="global.html#cookieParser">cookieParser</a></li><li><a href="global.html#db">db</a></li><li><a href="global.html#users">users</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">FriendshipView</h1>
+    
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        
+    
+</header>
+
+<article>
+    
+        <div class="container-overview">
+        
+            
+
+            
+        
+        </div>
+    
+
+    
+
+    
+
+    
+    
+    
+
+     
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<h4 class="name" id="~Friend_id"><span class="type-signature">(inner, constant) </span>Friend_id<span class="type-signature"> :Array</span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>현재 유저의  friendship정보를 받아오는 변수</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Array</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~Merge_Friend_Name"><span class="type-signature">(inner) </span>Merge_Friend_Name<span class="type-signature"> :Array</span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>친구 이름을 합쳐서 리턴해주는 변수</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Array</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    <h4 class="name" id="~FriendshipView"><span class="type-signature">(inner) </span>FriendshipView<span class="signature">(req, res)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <pre>
+처음 로그인을 하고 접속하였을대 보여지는 화면에서 나의 친구들 정보를 알 수 있도록
+친구들의 정보를 쉽게 회원에게 줄 수 있도록 설정해둔 프로그램 내용
+friendship에 존재하는 id값을 이름으로 출력하여준다.
+</pre>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>req</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>res</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<h5>Requires:</h5>
+<ul>
+    <li><a href="module-User.html">module:User</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+<h5>Throws:</h5>
+
+        
+
+    <div class="param-desc usertext">
+    
+        <p>해당하는 회원이 존재하지 않습니다.</p>
+    
+    </div>
+
+
+    
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>name : friendship에 일치하는 id값</p>
+</div>
+
+
+
+    
+
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on Tue Feb 02 2021 20:56:38 GMT+0900 (대한민국 표준시) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+
+
+</body>
+</html>
